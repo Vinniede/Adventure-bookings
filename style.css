@@ -1,22 +1,25 @@
-*{
+/* General Styling */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-body{
-    font-family: Arial, Helvetica, sans-serif;
+body {
     font-size: 16px;
     line-height: 1.5;
     background-color: darkgrey;
+    margin: 0;
+    overflow-x: hidden;
 }
-header{
-    font: optional;
+header {
     font-size: 2.5rem;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
     font-weight: bold;
     color: #26ff00;
+    text-align: center;
+    padding: 1rem 0;
 }
 .video-container {
     width: 100px;
@@ -30,168 +33,200 @@ video {
     width: 100%;
     height: auto;
 }
-ul{
+ul {
     list-style: none;
 }
-
-img{
+img {
     max-width: 100%;
+    display: block;
 }
-.navbar{
+
+/* Navbar */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   background-color: green;
-    
+    background-color: green;
+    padding: 0.5rem 1rem;
 }
-.main-menu ul{
+.main-menu ul {
     list-style: none;
     display: flex;
+    gap: 1rem;
 }
-
-.navbar ul li a{
+.navbar ul li a {
     color: white;
     padding: 0.5rem 1rem;
-    display: block;
     text-decoration: none;
-    transition: 0.5s;
+    transition: background-color 0.3s;
 }
-nav ul li a:hover{
+.navbar ul li a:hover {
     background-color: #555;
 }
-.hero{
-    background: url('images/6-10-Most-Beautiful-and-Interesting-Places-to-Visit-in-Kenya-BW-800px.jpg')no-repeat center center/cover;
+
+/* Hero Section */
+.hero {
+    background: url('images/6-10-Most-Beautiful-and-Interesting-Places-to-Visit-in-Kenya-BW-800px.jpg') no-repeat center center / cover;
     text-align: center;
     padding: 4rem 1rem;
-    box-sizing: border-boxs;
-} 
-.hero h1{
+}
+.hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: rgb(42, 15, 242);
 }
-.hero p{
+.hero p {
     font-size: 1.2rem;
     color: white;
 }
-.sec{
-    box-sizing: border-box;
+
+/* About Section */
+.about {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: rgb(50, 161, 205);
+    color: white;
+}
+
+/* Video Section */
+.sec {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
-.sec video{
-    position: relative;
-    top: auto;
+.sec video {
+    flex: 1;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.services{
-    background: url('./videos/How\ Beautiful\ Is\ This_\ --\ Kenya\ ----\ \ \ _travel\ _tembeakenya\ _kenya\ _africa\(360P\).mp4') no-repeat center/cover;
+
+/* Services Section */
+.services {
     padding: 2rem 1rem;
     margin-bottom: 1rem;
+    background: url('./images/service-background.jpg') no-repeat center / cover;
+    text-align: center;
+    color: white;
 }
-.services h2{
+.services h2 {
+    margin-bottom: 1.5rem;
     background-color: dodgerblue;
-    background-size: cover;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 4px;
 }
-.card-container{
-    display:flex;
+.card-container {
+    display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 1rem;
 }
-.card{
+.card {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin: 1rem;
     max-width: 300px;
-    text-align: left;
+    margin: 0.5rem;
+    text-align: center;
 }
-.card img{
-    width: fit-content;
+.card img {
+    width: 100%;
     height: auto;
 }
-.card h3{
+.card h3 {
     font-size: 1.5rem;
     margin: 0.5rem;
+    color: darkgreen;
+}
+.card p {
+    padding: 0 1rem 1rem;
+    color: #333;
 }
 
-.card p{
-    padding: 0 1rem 1rem;
-}
-.about{
-    padding: 2rem 1rem;
-    text-align: center;
-    size: 15cm;
-    background: rgb(50, 161, 205);
-}
-.sec1{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 26px;
-}
-.card1{
-    flex: 1 1 calc(25% - 32px);
-    border: 1px solid #d80ddc;
-    padding: 6px 25px 6px 25px;
-    align-items: center;
-    background-color: aqua;
-    color: blue;
-}
-/*.sec1{
-    background-size: cover;
-    box-sizing: border-box;
-    text-align: left;
-    max-width: 300px;
-    justify-content: space-around;
-    text-align: center;
-    padding: 1rem;
+/* Contact and Sec1 Section */
+.sec1 {
     display: flex;
     flex-wrap: wrap;
-
-    background-color: white;
+    gap: 1rem;
+    justify-content: center;
+}
+.card1 {
+    flex: 1 1 calc(25% - 1rem);
+    border: 1px solid #d80ddc;
+    padding: 1rem;
+    text-align: center;
+    background-color: aqua;
+    color: blue;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-    overflow: hidden;
-    margin: 1rem;
-    max-width: 300px;
-    text-align: left;
-}*/
-.contact{
+}
+.contact {
     padding: 1rem 2rem;
     text-align: center;
+    background-color: plum;
     color: hsl(254, 88%, 43%);
-    background-color:plum;
-    max-height: min-content;
+    border-radius: 8px;
 }
-.modal-content{
+
+/* Modal Styles */
+.modal {
     display: none;
     position: fixed;
-    z-index: 12;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0, 4);
+    background-color: rgba(119, 94, 210, 0.176);
     justify-content: center;
     align-items: center;
 }
-.modal-content{
-    background-color: white;
+.modal-content {
+    background-color: rgb(74, 102, 133);
     margin: 15% auto;
     padding: 2rem;
-    border: 1px solid #888;
-    max-width: 400px;
     border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
     position: relative;
+    text-align: center;
 }
-main{
+.modal-content h2 {
+    margin-bottom: 1rem;
+    color: aqua;
+}
+.modal-content input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.modal-content button {
+    background-color: green;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.modal-content button:hover {
+    background-color: darkgreen;
+}
+
+/* Main Section */
+main {
     background-color: black;
     color: white;
     text-align: center;
-    padding: 1rem;
-    
+    padding: 2rem;
 }
-footer{
+
+/* Footer */
+footer {
     background-color: #333;
     color: aliceblue;
     text-align: center;
