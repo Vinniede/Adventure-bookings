@@ -48,9 +48,22 @@ document.getElementById("loginform").addEventListener("submit", function (e) {
     const email = document.getElementById("loginemail").value;
     const password = document.getElementById("loginpassword").value;
 
-    // Add login logic here (e.g., API call)
-    alert(`Login Successful!\nEmail: ${email}`);
-    loginModal.style.display = "none";
+    // Backend integration for login
+    fetch("login.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+    })
+        .then(response => response.text())
+        .then(data => {
+            if (data.includes("success")) {
+                alert("Login Successful!");
+                loginModal.style.display = "none";
+            } else {
+                alert("Login Failed: " + data);
+            }
+        })
+        .catch(error => console.error("Error:", error));
 });
 
 // Handle signup form submission
@@ -60,7 +73,20 @@ document.getElementById("signupform").addEventListener("submit", function (e) {
     const email = document.getElementById("signupemail").value;
     const password = document.getElementById("signuppassword").value;
 
-    // Add signup logic here (e.g., API call)
-    alert(`Sign-Up Successful!\nName: ${name}\nEmail: ${email}`);
-    signUpModal.style.display = "none";
+    // Backend integration for signup
+    fetch("signup.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+    })
+        .then(response => response.text())
+        .then(data => {
+            if (data.includes("success")) {
+                alert("Sign-Up Successful!");
+                signUpModal.style.display = "none";
+            } else {
+                alert("Sign-Up Failed: " + data);
+            }
+        })
+        .catch(error => console.error("Error:", error));
 });
